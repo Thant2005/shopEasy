@@ -1,6 +1,7 @@
 export interface Product {
   id: string;
   title: string;
-  price: string;
+  price: number;
   description: string;
+  created_at: string;
 }
