@@ -7,7 +7,7 @@ function Navbar() {
         </div>
         <div className="flex gap-2 text-sm text-zinc-500 ">
           <div className="cursor-pointer">Home</div>
-          <div className="cursor-pointer">Card</div>
+          <div className="cursor-pointer">Cart</div>
         </div>
         <div>
           <button className="text-sm cursor-pointer font-normal text-center text-white bg-gray-500 rounded-sm px-3 py-1.5">
