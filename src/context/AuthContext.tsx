@@ -19,22 +19,22 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   );
   const signIn = (data: User) => {
     const users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
-    console.log(users);
+
     const user = users.find(
       (u) => u.email === data.email && u.password === data.password,
     );
-    console.log(user);
+
     if (!user) {
-      return { success: false, error: "Invalid email or password!" };
+      return { success: false, error: "Incorrect email or password!" };
     }
     localStorage.setItem("currentUserEmail", data.email);
     setUser({ email: data.email });
     return { success: true };
   };
   const signUp = (data: User) => {
-    let users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
+    const users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
     if (users.find((user) => user.email === data.email)) {
-      return { success: false, error: "Email already exits!" };
+      return { success: false, error: "Email already exists!" };
     }
     users.push(data);
     localStorage.setItem("users", JSON.stringify(users));
