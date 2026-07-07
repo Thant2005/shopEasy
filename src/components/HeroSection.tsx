@@ -1,6 +1,6 @@
 function HeroSection() {
   return (
-    <div className="  mt-25 flex flex-col space-y-2 items-center ">
+    <div className="   flex flex-col space-y-2 items-center mt-25 ">
       <h1 className="text-2xl font-bold text-zinc-600">
         Upgrade Your Lifestyle
       </h1>
