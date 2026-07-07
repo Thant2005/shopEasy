@@ -2,27 +2,27 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router";
 import type { User } from "../types/User";
 import { useAuth } from "../context/AuthContext";
-function Register() {
+function Login() {
   const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<User>();
-  const { signUp } = useAuth();
+  const { signIn } = useAuth();
   const onsubmit = (data: User) => {
-    const { success, error } = signUp(data);
+    const { success, error } = signIn(data);
     if (!success) {
       alert(error);
     } else {
       navigate("/");
-      alert("Registration  successful!");
+      alert("Login successful!");
     }
   };
   return (
     <div className="mt-30 max-w-xs  bg-white shadow-lg mx-auto">
       <div className="px-5 py-7">
-        <h1 className="text-lg font-semibold mb-3.5">Sign Up</h1>
+        <h1 className="text-lg font-semibold mb-3.5">Sign In</h1>
         <form onSubmit={handleSubmit(onsubmit)}>
           <div className="">
             <label htmlFor="" className="text-sm block mb-1 font-semibold">
@@ -71,13 +71,13 @@ function Register() {
             type="submit"
             className="text-sm bg-blue-600 text-white px-3 py-1 rounded-xs font-normal hover:bg-blue-700 cursor-pointer"
           >
-            Sign Up
+            Sign In
           </button>
         </form>
         <div className="text-center mt-4 text-sm text-zinc-600">
-          <span>Already have an account? </span>
-          <Link className="text-blue-600 text-xs" to={"/login"}>
-            Login
+          <span>Don't have an account? </span>
+          <Link className="text-blue-600 text-xs" to={"/register"}>
+            Sign Up
           </Link>
         </div>
       </div>
@@ -85,4 +85,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default Login;
