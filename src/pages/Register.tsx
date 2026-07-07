@@ -16,7 +16,7 @@ function Register() {
       alert(error);
     } else {
       navigate("/");
-      alert("Registration  successful!");
+      alert("Registration successful!");
     }
   };
   return (
@@ -25,7 +25,7 @@ function Register() {
         <h1 className="text-lg font-semibold mb-3.5">Sign Up</h1>
         <form onSubmit={handleSubmit(onsubmit)}>
           <div className="">
-            <label htmlFor="" className="text-sm block mb-1 font-semibold">
+            <label htmlFor="email" className="text-sm block mb-1 font-semibold">
               Email
             </label>
 
@@ -33,7 +33,7 @@ function Register() {
               type="email"
               {...register("email", { required: "Email is required" })}
               id="email"
-              autoComplete="current-email"
+              autoComplete="email"
               className="px-2  py-0.5 border border-zinc-300 block rounded-sm w-full
             "
             />
@@ -42,7 +42,10 @@ function Register() {
             )}
           </div>
           <div className="my-3 ">
-            <label htmlFor="" className="text-sm mb-1 block font-semibold">
+            <label
+              htmlFor="password"
+              className="text-sm mb-1 block font-semibold"
+            >
               Password
             </label>
             <input

@@ -3,10 +3,8 @@ import Layout from "../components/layout/Layout";
 import ProductList from "../pages/ProductList";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
-import { useAuth } from "../context/AuthContext";
 
 function Router() {
-  const { user } = useAuth();
   const router = createBrowserRouter([
     {
       path: "/",
